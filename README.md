@@ -160,8 +160,8 @@ How to link personal gmail with Make
       • App name: makedotcom  
       • Select email  
       • Add authorized domains  
-        •• Make.com  
-        •• Integromat.com  
+           • Make.com  
+           • Integromat.com  
       • Add contact email
 
    2. Scopes (what permissions are allowed)  
