@@ -146,6 +146,47 @@ Gmail (Send Email with Summary & Dropbox Link)
 - Gmail connection via Make OAuth
 - Ensure correct sending permissions
 
+How to link personal gmail with Make
+
+1. Go to https://console.cloud.google.com/
+
+   1. Make sure you're signed into the right account
+
+   2. Create New Project > Name: makedotcom
+
+2. Dashboard > APIs and services > Enable > Gmail API
+
+   1. OAuth consent screen > External  
+      • App name: makedotcom  
+      • Select email  
+      • Add authorized domains  
+        •• Make.com  
+        •• Integromat.com  
+      • Add contact email
+
+   2. Scopes (what permissions are allowed)  
+      1. Add > Gmail API  
+         • mail.google.com  
+         • .modify  
+         • .compose  
+         • .readonly  
+         • .metadata  
+         • .insert  
+         • .send  
+         • .labels  
+      2. Update > Save and continue
+
+   3. Test users > add your email
+
+3. Credentials > Create Credentials > OAuth client ID  
+   o Web apolication > any name eg makedotcom  
+   o Authorized redirect URIs  
+     • https://www.integromat.com/outh/cb/ google-restricted
+
+4. Done! You got your Client ID and Client Secret, used to connect to your gmail.
+
+5. Add them to Make Gmail module
+
 ---
 
 ## ✅ Pre-requisites
