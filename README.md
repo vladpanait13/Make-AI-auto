@@ -67,6 +67,8 @@ OpenAI ChatGPT (Summarize)
 
 Gmail (Send Email with Summary & Dropbox Link)
 
+---
+
 #### 1. Logic Representation  
 ![Logic Flow](AI-Automation-Flow.png)
 
