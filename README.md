@@ -42,17 +42,29 @@ The automation eliminates manual tasks and ensures meeting information is access
 ### 🧭 Logic Flow
 
 Zoom (Watch Recordings)
+
 ↓
+
 Zoom (Download Cloud Recording)
+
 ↓
+
 Dropbox (Upload file)
+
 ↓
+
 Dropbox (Generate Share Link)
+
 ↓
+
 Fireflies.ai (Get Transcript)
+
 ↓
+
 OpenAI ChatGPT (Summarize)
+
 ↓
+
 Gmail (Send Email with Summary & Dropbox Link)
 
 #### 1. Logic Representation  
