@@ -94,9 +94,9 @@ Gmail (Send Email with Summary & Dropbox Link)
 4. **Dropbox - Create Share Link**
    - Action: Generate a public Dropbox URL for the file
 
-5. **Fireflies.ai - Get Transcript**
+5. **Fireflies.ai - List All Transcripts & Get Transcript**
    - Action: Submit recording or Dropbox link for transcription
-   - Output: Raw transcript text
+   - Output: Transcript text
 
 6. **OpenAI - ChatGPT**
    - Action: Send the transcript text to ChatGPT
@@ -131,10 +131,12 @@ Gmail (Send Email with Summary & Dropbox Link)
 - OAuth or JWT App
 - Required Scope: `recording:read`
 - Required Payload from Webhook: `recording.completed`
+- VPN needed to link your Zoom account (Make is not supporting Zoom connections from EU)
+- Share permissions for the recording
 
 ### Dropbox
 - Access Token (OAuth2)
-- Permissions: `files.content.write`, `sharing.read`
+- Share permissions for the files
 
 ### Fireflies.ai
 - API Key or Linked Dropbox integration
@@ -144,10 +146,10 @@ Gmail (Send Email with Summary & Dropbox Link)
 - Model: `gpt-4` or `gpt-3.5-turbo`
 
 ### Gmail
-- Gmail connection via Make OAuth
+- Gmail connection via Make OAuth - Personal Gmail accounts need special authorization*
 - Ensure correct sending permissions
 
-How to link personal gmail with Make
+How to link personal Gmail with Make
 
 1. Go to https://console.cloud.google.com/
 
@@ -161,8 +163,8 @@ How to link personal gmail with Make
       • App name: makedotcom  
       • Select email  
       • Add authorized domains  
-           • Make.com  
-           • Integromat.com  
+         o Make.com  
+         o Integromat.com  
       • Add contact email
 
    2. Scopes (what permissions are allowed)  
@@ -180,11 +182,11 @@ How to link personal gmail with Make
    3. Test users > add your email
 
 3. Credentials > Create Credentials > OAuth client ID  
-   o Web apolication > any name eg makedotcom  
+   o Web application > any name eg. makedotcom  
    o Authorized redirect URIs  
-     • https://www.integromat.com/outh/cb/ google-restricted
+     • https://www.integromat.com/outh/cb/google-restricted
 
-4. Done! You got your Client ID and Client Secret, used to connect to your gmail.
+4. Done! You got your Client ID and Client Secret, used to connect to your personal Gmail account.
 
 5. Add them to Make Gmail module
 
@@ -194,7 +196,7 @@ How to link personal gmail with Make
 
 - Verified accounts on all platforms
 - Pre-scheduled Zoom meeting via Google Calendar
-- Invite ` fred@fireflies.ai ` to the meeting when setting it
+- Invite ` fred@fireflies.ai ` to the Zoom meeting when setting it
 - Zoom recording must be saved to the cloud, Zoom Pro subscription needed for this step
 - File size and format must be compatible with Dropbox and Fireflies.ai
 
