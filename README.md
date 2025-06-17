@@ -40,3 +40,4 @@ The automation eliminates manual tasks and ensures meeting information is access
 ## 🛠️ Flow Diagram
 
 ### 🧭 Logic Flow
+![AI Automation Flow](AI-Automation-Flow.png)
