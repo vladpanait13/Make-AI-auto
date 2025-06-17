@@ -162,9 +162,10 @@ How to link personal Gmail with Make
    1. OAuth consent screen > External  
       • App name: makedotcom  
       • Select email  
-      • Add authorized domains:
+      • Add authorized domains
          - Make.com
          - Integromat.com
+   
       • Add contact email
 
    2. Scopes (what permissions are allowed)  
@@ -184,11 +185,12 @@ How to link personal Gmail with Make
 3. Credentials > Create Credentials > OAuth client ID  
    o Web application > any name eg. makedotcom  
    o Authorized redirect URIs:
+   
          • https://www.integromat.com/outh/cb/google-restricted
 
-4. Done! You got your Client ID and Client Secret, used to connect to your personal Gmail account.
+5. Done! You got your Client ID and Client Secret, used to connect to your personal Gmail account.
 
-5. Add them to Make Gmail module
+6. Add them to Make Gmail module
 
 ---
 
