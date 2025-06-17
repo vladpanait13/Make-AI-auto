@@ -74,7 +74,7 @@ Gmail (Send Email with Summary & Dropbox Link)
 
 
 #### 2. Make.com Scenario  
-[Make Scenario](misc/flow.png)
+![Make Scenario](/misc/flow.png)
 
 ## 🧩 Make.com Scenario Configuration
 
