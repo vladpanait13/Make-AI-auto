@@ -130,6 +130,7 @@ Gmail (Send Email with Summary & Dropbox Link)
 ### Zoom
 - OAuth or JWT App
 - Required Scope: `recording:read`
+- Required Payload from Webhook: `recording.completed`
 
 ### Dropbox
 - Access Token (OAuth2)
@@ -193,7 +194,8 @@ How to link personal gmail with Make
 
 - Verified accounts on all platforms
 - Pre-scheduled Zoom meeting via Google Calendar
-- Zoom recording must be saved to the cloud
+- Invite ` fred@fireflies.ai ` to the meeting when setting it
+- Zoom recording must be saved to the cloud, Zoom Pro subscription needed for this step
 - File size and format must be compatible with Dropbox and Fireflies.ai
 
 ---
