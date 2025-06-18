@@ -208,7 +208,9 @@ How to link personal Gmail with Make
 ## 🚦 Error Handling
 
 - **File not found** → Add delay to wait for Zoom to finish processing
-*Description*:  
+
+*Description*:
+
 The recording file cannot be downloaded from Zoom. Possible causes:
 - The download URL has expired
 - Authentication is required
@@ -220,11 +222,13 @@ The recording file cannot be downloaded from Zoom. Possible causes:
 - Log the failed file info (meeting title, start time) to a Google Sheet for manual review
 
 - **Fireflies Transcript Not Ready** → Retry after delay or fallback to Whisper API
+
 *Description*:  
 - Fireflies.ai may take time to process and return the transcript.
 - If queried too soon, the transcript content will be missing or incomplete.
 
 *Fallback*:
+
 - Add a sleep module to delay processing (e.g., wait 3–5 minutes)
 - Implement retry logic or loop (e.g., retry Get Transcript up to 3 times)
 - If the transcript is still not available:
@@ -234,7 +238,9 @@ The recording file cannot be downloaded from Zoom. Possible causes:
     Log the transcript ID for retry later
   
 - **OpenAI timeout or truncation** → Use chunking for large transcripts
+
 *Description*:  
+
 - Summarization via ChatGPT may fail due to:
 
     Incorrect input format (e.g., empty string, bad structure)
@@ -244,6 +250,7 @@ The recording file cannot be downloaded from Zoom. Possible causes:
     Rate limits or temporary downtime
 
 *Fallback*:
+
 - Use an error route to send a fallback email without a summary
 
 - Include the transcript (if available) or a message to check manually
