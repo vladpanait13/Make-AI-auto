@@ -207,7 +207,7 @@ How to link personal Gmail with Make
 
 ## 🚦 Error Handling
 
-- **File not found** → Add delay to wait for Zoom to finish processing
+### **File not found** → Add delay to wait for Zoom to finish processing
 
 *Description*:
 
@@ -221,7 +221,7 @@ The recording file cannot be downloaded from Zoom. Possible causes:
 - Send an alert email with the subject: `Zoom Download Failed`
 - Log the failed file info (meeting title, start time) to a Google Sheet for manual review
 
-- **Fireflies Transcript Not Ready** → Retry after delay or fallback to Whisper API
+### **Fireflies Transcript Not Ready** → Retry after delay or fallback to Whisper API
 
 *Description*:  
 - Fireflies.ai may take time to process and return the transcript.
@@ -237,7 +237,7 @@ The recording file cannot be downloaded from Zoom. Possible causes:
 
     Log the transcript ID for retry later
   
-- **OpenAI timeout or truncation** → Use chunking for large transcripts
+### **OpenAI timeout or truncation** → Use chunking for large transcripts
 
 *Description*:  
 
@@ -258,7 +258,7 @@ The recording file cannot be downloaded from Zoom. Possible causes:
 - Optionally log the failed input and error message
 
 
-- **Email delivery failure** → Retry logic or add webhook alert
+### **Email delivery failure** → Retry logic or add webhook alert
 
 ---
 
