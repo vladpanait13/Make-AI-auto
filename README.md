@@ -199,6 +199,7 @@ How to link personal Gmail with Make
 - Verified accounts on all platforms
 - Pre-scheduled Zoom meeting via Google Calendar
 - Invite ` fred@fireflies.ai ` to the Zoom meeting when setting it
+- When setting up the meeting, select "Waiting Room" as Security and select "Automatically record meeting in the cloud"
 - Zoom recording must be saved to the cloud, Zoom Pro subscription needed for this step
 - File size and format must be compatible with Dropbox and Fireflies.ai
 
@@ -207,8 +208,49 @@ How to link personal Gmail with Make
 ## 🚦 Error Handling
 
 - **File not found** → Add delay to wait for Zoom to finish processing
-- **Transcription failure** → Retry after delay or fallback to Whisper API
+*Description*:  
+The recording file cannot be downloaded from Zoom. Possible causes:
+- The download URL has expired
+- Authentication is required
+- The file is missing or malformed
+
+*Fallback*:
+- Route the error to a separate branch using Make's *Error Handler*
+- Send an alert email with the subject: `Zoom Download Failed`
+- Log the failed file info (meeting title, start time) to a Google Sheet for manual review
+
+- **Fireflies Transcript Not Ready** → Retry after delay or fallback to Whisper API
+*Description*:  
+- Fireflies.ai may take time to process and return the transcript.
+- If queried too soon, the transcript content will be missing or incomplete.
+
+*Fallback*:
+- Add a sleep module to delay processing (e.g., wait 3–5 minutes)
+- Implement retry logic or loop (e.g., retry Get Transcript up to 3 times)
+- If the transcript is still not available:
+
+    Send a placeholder email
+
+    Log the transcript ID for retry later
+  
 - **OpenAI timeout or truncation** → Use chunking for large transcripts
+*Description*:  
+- Summarization via ChatGPT may fail due to:
+
+    Incorrect input format (e.g., empty string, bad structure)
+
+    Invalid API key or endpoint (e.g., 404)
+
+    Rate limits or temporary downtime
+
+*Fallback*:
+- Use an error route to send a fallback email without a summary
+
+- Include the transcript (if available) or a message to check manually
+
+- Optionally log the failed input and error message
+
+
 - **Email delivery failure** → Retry logic or add webhook alert
 
 ---
